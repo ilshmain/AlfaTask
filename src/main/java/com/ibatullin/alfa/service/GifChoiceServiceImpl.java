@@ -71,7 +71,7 @@ public class GifChoiceServiceImpl implements GifChoiceService {
         ObjectMapper oMapper = new ObjectMapper();
         GifDTO gifDTO = gifService.getGifResponse(tag).getBody();
 
-        //Необходимый URL находится глубоко, решил достать еще через несколько map
+        //Необходимый URL находится глубоко, решил достать ее используя ObjectMapper
         obj = Objects.requireNonNull(gifDTO).getData();
         map = oMapper.convertValue(obj, Map.class);
         obj = oMapper.convertValue(map.get("images"), Map.class);

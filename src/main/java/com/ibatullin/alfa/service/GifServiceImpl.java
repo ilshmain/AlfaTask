@@ -8,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
-@Data
 public class GifServiceImpl implements GifService {
 
     private final GifApi gifApi;

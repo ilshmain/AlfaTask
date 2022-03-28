@@ -17,6 +17,6 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(CurrentException.class)
     public ResponseEntity<ResponseMessage> BaseException(Exception e) {
-        return new ResponseEntity<>(new ResponseMessage(e.getMessage()), HttpStatus.FORBIDDEN);
+        return new ResponseEntity<>(new ResponseMessage(e.getMessage()), HttpStatus.BAD_REQUEST);
     }
 }
