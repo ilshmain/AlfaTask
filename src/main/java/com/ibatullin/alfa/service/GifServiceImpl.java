@@ -1,7 +1,7 @@
 package com.ibatullin.alfa.service;
 
 import com.ibatullin.alfa.api.GifApi;
-import com.ibatullin.alfa.model.GifModel;
+import com.ibatullin.alfa.dto.GifDTO;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +19,7 @@ public class GifServiceImpl implements GifService {
         this.API_KEY = API_KEY;
     }
 
-    public ResponseEntity<GifModel> getGifResponse(String tag) {
+    public ResponseEntity<GifDTO> getGifResponse(String tag) {
         return gifApi.getGif(API_KEY, tag);
     }
 }

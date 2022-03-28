@@ -1,8 +1,8 @@
 package com.ibatullin.alfa.service;
 
-import com.ibatullin.alfa.model.GifModel;
+import com.ibatullin.alfa.dto.GifDTO;
 import org.springframework.http.ResponseEntity;
 
 public interface GifService {
-    ResponseEntity<GifModel> getGifResponse(String tag);
+    ResponseEntity<GifDTO> getGifResponse(String tag);
 }

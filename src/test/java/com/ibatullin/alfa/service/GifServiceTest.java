@@ -1,6 +1,6 @@
 package com.ibatullin.alfa.service;
 
-import com.ibatullin.alfa.model.GifModel;
+import com.ibatullin.alfa.dto.GifDTO;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ class GifServiceTest {
     @Test
     public void getCurrencyTrue() {
         String tag = "rich";
-        GifModel gifModel = gifService.getGifResponse(tag).getBody();
-        assertNotNull(gifModel.getData());
+        GifDTO gifDTO = gifService.getGifResponse(tag).getBody();
+        assertNotNull(gifDTO.getData());
     }
 }

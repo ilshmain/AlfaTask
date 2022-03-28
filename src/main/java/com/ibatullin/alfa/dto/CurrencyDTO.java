@@ -1,10 +1,10 @@
-package com.ibatullin.alfa.model;
+package com.ibatullin.alfa.dto;
 
 import lombok.Data;
 import java.util.Map;
 
 @Data
-public class CurrencyModel {
+public class CurrencyDTO {
     private String disclaimer;
     private String license;
     private long timestamp;

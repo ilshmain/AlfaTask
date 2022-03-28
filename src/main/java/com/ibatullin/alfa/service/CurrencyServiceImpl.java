@@ -5,7 +5,7 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import com.ibatullin.alfa.model.CurrencyModel;
+import com.ibatullin.alfa.dto.CurrencyDTO;
 
 @Service
 @Data
@@ -18,7 +18,7 @@ public class CurrencyServiceImpl implements CurrencyService {
         this.API_KEY = API_KEY;
     }
 
-    public ResponseEntity<CurrencyModel> getCurrency(String date) {
+    public ResponseEntity<CurrencyDTO> getCurrency(String date) {
         return currencyApi.getCurrency(date, API_KEY);
     }
 }

@@ -2,8 +2,8 @@ package com.ibatullin.alfa.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ibatullin.alfa.exception.CurrentException;
-import com.ibatullin.alfa.model.CurrencyModel;
-import com.ibatullin.alfa.model.GifModel;
+import com.ibatullin.alfa.dto.CurrencyDTO;
+import com.ibatullin.alfa.dto.GifDTO;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -54,10 +54,10 @@ public class GifChoiceServiceImpl implements GifChoiceService {
     }
 
     private double getRateByDateAndBase(String date, String base) {
-        CurrencyModel currencyModel = currencyService.getCurrency(date).getBody();
+        CurrencyDTO currencyDTO = currencyService.getCurrency(date).getBody();
         double rate = 0;
         try {
-             rate = Objects.requireNonNull(currencyModel).getRates().get(base);
+             rate = Objects.requireNonNull(currencyDTO).getRates().get(base.toUpperCase());
         } catch (Throwable e) {
             throw new CurrentException("Введена некорректная валюта");
         }
@@ -69,10 +69,10 @@ public class GifChoiceServiceImpl implements GifChoiceService {
         Map map;
         Object obj;
         ObjectMapper oMapper = new ObjectMapper();
-        GifModel gifModel = gifService.getGifResponse(tag).getBody();
+        GifDTO gifDTO = gifService.getGifResponse(tag).getBody();
 
         //Необходимый URL находится глубоко, решил достать еще через несколько map
-        obj = Objects.requireNonNull(gifModel).getData();
+        obj = Objects.requireNonNull(gifDTO).getData();
         map = oMapper.convertValue(obj, Map.class);
         obj = oMapper.convertValue(map.get("images"), Map.class);
         map = oMapper.convertValue(obj, Map.class);

@@ -1,9 +1,9 @@
-package com.ibatullin.alfa.model;
+package com.ibatullin.alfa.dto;
 
 import lombok.Data;
 import java.util.Map;
 
 @Data
-public class GifModel {
+public class GifDTO {
    Map<String, Object> data;
 }
