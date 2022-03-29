@@ -23,7 +23,7 @@
 **_Пример:_**   
 `http://localhost:8080/api/gif?base=AED`
 ------
-- `/api`  
+- `/api/gif`  
 Возвращает гифку в зависимости от курса валюты (USD)    
 **_Пример:_**   
-`http://localhost:8080/api`
+`http://localhost:8080/api/gif`
